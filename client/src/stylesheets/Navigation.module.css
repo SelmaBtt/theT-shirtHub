@@ -1,0 +1,9 @@
+.ulWrapper{
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+    align-items: center;
+}
+.ulWrapper li{
+    margin-right: 2vw;
+}
