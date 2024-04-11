@@ -1,0 +1,20 @@
+.navWrapper{
+    display: flex;
+    padding: 15px 2%;
+    justify-content: space-between;
+    background-color: gainsboro;
+}
+
+.image{
+    width: 300px;
+}
+
+.ulWrapper{
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+    align-items: center;
+}
+.ulWrapper li{
+    margin-right: 2vw;
+}
