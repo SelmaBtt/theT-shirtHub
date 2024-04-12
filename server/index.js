@@ -1,13 +1,51 @@
 const express = require('express')
 const app = express()
+const mysql = require('mysql')
 
-app.get('/', (req, res) => {
-    res.send("You are currently in the default hub of the T-shirt Hub")
+// Connecting to database 
+const db = mysql.createConnection({
+    user: "root",
+    host: "localhost",
+    password: "1468Skxb",
+    database: "thubdb",
+    port: 3306,
+})
+// if (db.state!=='disconnected'){
+//     console.log("ok")
+// }
+
+app.use(express.json());
+
+
+// Handeling data from the users table ----------------------------------------
+
+// GET request
+app.get('/users', (req, res) => {
+    db.query("SELECT * FROM users;", (err, result) => {
+        if (err) {
+            res.status(400).json(err);
+            console.log(err)
+        } else{
+            res.status(200).json(result);
+        }
+    })
 })
 
-app.get('/getMsg', (req, res) => {
-    res.send("Hello World")
+// POST request
+app.post('/users', (req, res) => {
+    const {fname, lname, age, mail} = req.body;
+    db.query(
+        "INSERT INTO users (fname, lname, age, mail) VALUES (?, ?, ?, ?)", 
+        [fname, lname, age, mail], 
+        (err, result) => {
+            if (err) {
+                res.status(400).json(err);
+            } else{
+                res.status(200).json(result);
+            }
+    })
 })
+//------------------------------------------------------------------------------
 
 
 app.listen(3001, () => {
