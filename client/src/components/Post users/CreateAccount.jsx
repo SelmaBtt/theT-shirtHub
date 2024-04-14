@@ -1,17 +1,20 @@
-import { useState } from 'react';
-import styles from '../../stylesheets/CreateAccount.module.css';
-import ShowResponseMsg from './ShowResponseMsg';
+import { useState, useRef, useEffect } from 'react';
+import validator from "validator";
+import DisplayForm from './DisplayForm';
 
 const CreateAccount = () => {
 
-    // useStates for form
+    // useStates for form field
     const [fname, setFname] = useState("")
     const [lname, setLname] = useState("")
-    const [age, setAge] = useState(0)
     const [mail, setMail] = useState("")
     const [password, setPassword] = useState("")
 
-    // useState for popup window
+    // Hooks for invalid email
+    const emailInput = useRef()
+    const [emailErrMsg, setEmailErrMsg] = useState("")
+
+    // useState for success or error creating acc
     const [popupMessage, setPopupMessage] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
 
@@ -40,47 +43,26 @@ const CreateAccount = () => {
         }
     }
 
+    // Check if Email is valid
+    useEffect(() => {
+        if (!validator.isEmail(emailInput.current.value)) {
+            setEmailErrMsg("Please enter a valid Email");
+        } else(
+            setEmailErrMsg("")
+        )
+    }, [mail])
+
     return(
         <>
-            <h1 className={styles.title}>Create your t-shirt hub account</h1>
-
-            <form onSubmit={createAccBtn} className={styles.formWrapper}>
-                <label>First name</label>
-                <input 
-                    type="text"
-                    value={fname}
-                    onChange={(e) => setFname(e.target.value)}
-                    required
-                />
-                <label>Last name</label>
-                <input 
-                    type="text"
-                    value={lname}
-                    onChange={(e) => setLname(e.target.value)}
-                    required
-                />
-                <label>Email address</label> 
-                <input 
-                    type="text"
-                    value={mail}
-                    onChange={(e) => setMail(e.target.value)}
-                    required
-                />
-                <label>Create password</label> 
-                <input 
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button>Create account</button> {/* CHANGE BUTTON STYLING TO A STYLING */}
-            </form>
-
-            {/* Success or error response creating account */}
-            {popupMessage && <ShowResponseMsg popupMessage={popupMessage} setPopupMessage={setPopupMessage} />}
-            {errorMessage && 
-                <p>Problem creating account. Try again</p>
-            }
+            <DisplayForm
+                fname={fname} setFname={setFname}
+                lname={lname} setLname={setLname}
+                mail={mail} setMail={setMail}
+                password={password} setPassword={setPassword}
+                emailInput={emailInput} emailErrMsg={emailErrMsg}
+                popupMessage={popupMessage} setPopupMessage={setPopupMessage}
+                errorMessage={errorMessage} createAccBtn={createAccBtn}
+            />
         </>
     )
 }
