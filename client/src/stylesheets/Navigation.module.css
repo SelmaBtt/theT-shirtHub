@@ -1,9 +1,31 @@
-.ulWrapper{
+/* The navigation links in the middle */
+.ulForProducts{
+    font-size: 20px;
+    align-items: flex-end;
+}
+
+
+/* The navigation links to the right */
+.ulForInfo{
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+
+/* For both navigation links */
+.ulForProducts, .ulForInfo{
     display: flex;
     list-style-type: none;
-    font-size: 20px;
-    align-items: center;
+    padding: 0;
 }
-.ulWrapper li{
+
+.ulForProducts li, .ulForInfo li, .searchWrapper input{
     margin-right: 2vw;
+}
+
+.searchWrapper{
+    align-items: center;
+    display: flex;
 }
