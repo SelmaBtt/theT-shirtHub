@@ -21,9 +21,10 @@
     padding: 0;
 }
 
-.ulForProducts li, .ulForInfo li, .searchWrapper input{
+.ulForProducts li, .ulForInfo li{
     margin-right: 2vw;
 }
+
 
 .searchWrapper{
     align-items: center;

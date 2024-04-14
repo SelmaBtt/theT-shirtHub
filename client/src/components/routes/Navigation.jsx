@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from '../../stylesheets/Navigation.module.css'
+import LogIn from './LogIn';
 
 const Navigation = () => {
     return(
@@ -9,14 +10,15 @@ const Navigation = () => {
                 <li><NavLink to='/'>Products</NavLink></li>
             </ul>
             <ul className={styles.ulForInfo}>
-                <li><NavLink>Sign up</NavLink></li>
                 <li><NavLink to='/'>📞 Contact</NavLink></li>
                 <li><NavLink to='/'>ℹ️ About</NavLink></li>
             </ul>
             <div className={styles.searchWrapper}>
                 <input type="text" /> {/* PLACEHOLDER */}
-                <NavLink to='/sign_up'>👤 Sign in</NavLink>
+                <button>🔍</button>
+                <LogIn />
             </div>
+
         </>
     )
 }

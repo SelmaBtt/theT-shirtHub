@@ -1,0 +1,22 @@
+.logInWrapper{
+    position: fixed;
+    background-color: thistle;
+    padding: 30px;
+    
+    /* To center the log in modal window */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logInWrapper * {
+    margin-bottom: 10px;
+}
+
+.modalBtn{
+    display: flex;
+    justify-content: end;
+}
+
+.logInFields{
+    margin-top: -30px;
+}
