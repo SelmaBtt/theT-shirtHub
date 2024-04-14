@@ -9,6 +9,7 @@ const CreateAccount = () => {
     const [lname, setLname] = useState("")
     const [age, setAge] = useState(0)
     const [mail, setMail] = useState("")
+    const [password, setPassword] = useState("")
 
     // useState for popup window
     const [popupMessage, setPopupMessage] = useState(false)
@@ -24,8 +25,8 @@ const CreateAccount = () => {
                 body: JSON.stringify({
                     fname: fname,
                     lname: lname,
-                    age: age,
                     mail: mail,
+                    password: password,
                 })
             })
             if (response.ok) {
@@ -58,18 +59,18 @@ const CreateAccount = () => {
                     onChange={(e) => setLname(e.target.value)}
                     required
                 />
-                <label>Age</label>
-                <input 
-                    type="number"
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
-                    required
-                />
                 <label>Email address</label> 
                 <input 
                     type="text"
                     value={mail}
                     onChange={(e) => setMail(e.target.value)}
+                    required
+                />
+                <label>Create password</label> 
+                <input 
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                 />
                 <button>Create account</button> {/* CHANGE BUTTON STYLING TO A STYLING */}

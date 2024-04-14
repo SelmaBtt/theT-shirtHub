@@ -35,10 +35,10 @@ app.get('/users', (req, res) => {
 
 // POST request
 app.post('/users', (req, res) => {
-    const {fname, lname, age, mail} = req.body;
+    const {fname, lname, mail, password} = req.body;
     db.query(
-        "INSERT INTO users (fname, lname, age, mail) VALUES (?, ?, ?, ?)", 
-        [fname, lname, age, mail], 
+        "INSERT INTO users (fname, lname, mail, password) VALUES (?, ?, ?, ?)", 
+        [fname, lname, mail, password], 
         (err, result) => {
             if (err) {
                 res.status(400).json(err);
