@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql')
 const cors = require('cors')
+const validation = require('./Middlewares/validationMiddleware');
+const userSchema = require('./validations/userValidation')
 
 // Connecting to database 
 const db = mysql.createConnection({
@@ -34,8 +36,8 @@ app.get('/users', (req, res) => {
 })
 
 // POST request
-app.post('/users', (req, res) => {
-    const {fname, lname, mail, password} = req.body;
+app.post('/users', validation(userSchema), (req, res) => {
+    const { fname, lname, mail, password } = req.body;
     db.query(
         "INSERT INTO users (fname, lname, mail, password) VALUES (?, ?, ?, ?)", 
         [fname, lname, mail, password], 
@@ -43,10 +45,11 @@ app.post('/users', (req, res) => {
             if (err) {
                 res.status(400).json(err);
             } else{
-                res.status(200).json(result);
+                return res.status(200).json(result);
             }
-    })
-})
+    });
+});
+
 //------------------------------------------------------------------------------
 
 
