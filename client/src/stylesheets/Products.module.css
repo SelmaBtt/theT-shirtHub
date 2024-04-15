@@ -1,0 +1,22 @@
+.pageTitle{
+    text-align: center;
+    margin: 50px;
+}
+
+.productsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.individualPrWrapper{
+    width: 300px;
+}
+
+.imgWrapper{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-color: lavender;
+}

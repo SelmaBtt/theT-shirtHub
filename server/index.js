@@ -18,8 +18,22 @@ const db = mysql.createConnection({
 // }
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
+
+// Handeling data from the products table -------------------------------------
+
+app.get('/products', (req, res) => {
+    db.query("SELECT * FROM products", (err, result) => {
+        if (err) {
+            res.status(400).json(err);
+        } else {
+            res.status(200).json(result);
+        }
+    })
+})
+
+// -------------------------------------------------------------------------------
 
 // Handeling data from the users table ----------------------------------------
 

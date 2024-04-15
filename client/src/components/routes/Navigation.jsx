@@ -7,7 +7,7 @@ const Navigation = () => {
         <>
             <ul className={styles.ulForProducts}>
                 <li><NavLink to='/'>Home</NavLink></li>
-                <li><NavLink to='/'>Products</NavLink></li>
+                <li><NavLink to='/products'>Products</NavLink></li>
             </ul>
             <ul className={styles.ulForInfo}>
                 <li><NavLink to='/'>📞 Contact</NavLink></li>
