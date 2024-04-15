@@ -23,8 +23,9 @@ app.use(cors());
 
 // Handeling data from the products table -------------------------------------
 
+// Get request ALL
 app.get('/products', (req, res) => {
-    db.query("SELECT * FROM products", (err, result) => {
+    db.query("SELECT * FROM products ORDER BY title", (err, result) => {
         if (err) {
             res.status(400).json(err);
         } else {
@@ -33,7 +34,19 @@ app.get('/products', (req, res) => {
     })
 })
 
-// -------------------------------------------------------------------------------
+// Get request SPECIFIC
+app.get('/products/:id', (req, res) => {
+    const productID = req.params.id;
+    db.query(`SELECT * FROM products WHERE productid = ${productID}`, (err, result) => {
+        if (err) {
+            res.status(400).json(err);
+        } else {
+            res.status(200).json(result);
+        }
+    })
+})
+
+// ----------------------------------------------------------------------------
 
 // Handeling data from the users table ----------------------------------------
 

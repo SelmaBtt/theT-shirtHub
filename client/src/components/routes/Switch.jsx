@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import CreateAccount from '../Post users/CreateAccount';
-import Products from '../Products';
-import ProductDetail from '../ProductDetail';
+import CreateAccount from '../post users/CreateAccount';
+import Products from '../products/Products';
+import ProductDetail from '../products/ProductDetail';
 
 const Switch = () => {
     return(

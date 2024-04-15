@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from '../../stylesheets/Navigation.module.css'
-import LogIn from './LogIn';
+import LogIn from '../LogIn';
 
 const Navigation = () => {
     return(

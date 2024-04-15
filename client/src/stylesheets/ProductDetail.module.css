@@ -1,0 +1,23 @@
+.detailsWrapper{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 30px;
+}
+
+.imgWrapper{
+    background-color: lavender;
+    height: 600px;
+    width: 450px;
+    /* Just to center the img placeholder text */
+    display: flex;
+    align-items: center;
+}
+
+.infoWrapper{
+    align-content: center;
+    width: 450px;
+}
+.infoWrapper h1, .infoWrapper > h2:first-of-type, .infoWrapper p{
+    margin-bottom: 20px;
+}

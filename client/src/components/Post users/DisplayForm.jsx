@@ -1,10 +1,10 @@
 import ShowResponseMsg from './ShowResponseMsg';
 import styles from '../../stylesheets/DisplayForm.module.css';
 
-const DisplayForm = (
-    { fname, setFname, lname, setLname, mail, setMail, password, setPassword,
-    emailInput, emailErrMsg, popupMessage, setPopupMessage, errorMessage, createAccBtn }
-) => {
+const DisplayForm = ({ 
+    fname, setFname, lname, setLname, mail, setMail, password, setPassword,
+    emailInput, emailErrMsg, popupMessage, setPopupMessage, errorMessage, createAccBtn 
+}) => {
     return(
         <>
             <h1 className={styles.title}>Create your t-shirt hub account</h1>

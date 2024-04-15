@@ -5,6 +5,7 @@ export const ProductsContext = createContext();
 const ProductContextProvider = (props) => {
 
     const [productsData, setProductsData] = useState([])
+    const [oneProductData, setOneProductData] = useState([])
     
     const fetchProducts = async () => {
         try {
@@ -18,10 +19,22 @@ const ProductContextProvider = (props) => {
             console.log(error)
         }
     }
-    
+
+    const fetchOneProduct = async (pID) => {
+        try {
+            const response = await fetch(`http://localhost:3001/products/${pID}`)
+            if (!response.ok) {
+                throw Error('Error fetching products');
+            }
+            let data = await response.json();
+            setOneProductData(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return(
-        <ProductsContext.Provider value={{ productsData, fetchProducts }}>
+        <ProductsContext.Provider value={{ productsData, fetchProducts, oneProductData, fetchOneProduct }}>
             {props.children}
         </ProductsContext.Provider>
     )

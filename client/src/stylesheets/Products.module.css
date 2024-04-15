@@ -6,8 +6,9 @@
 .productsWrapper{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px 20px;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .individualPrWrapper{
@@ -16,6 +17,7 @@
 
 .imgWrapper{
     height: 400px;
+    /* Just to center the img placeholder text */
     display: flex;
     align-items: center;
     background-color: lavender;
