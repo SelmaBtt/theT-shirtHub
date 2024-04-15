@@ -4,13 +4,16 @@ import App from './components/App'
 import { BrowserRouter } from 'react-router-dom';
 import './stylesheets/root.css'
 import ProductContextProvider from './context/ProductContextProvider';
+import LogInContextProvider from './context/LogInContextProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ProductContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ProductContextProvider>
+    <LogInContextProvider>
+      <ProductContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ProductContextProvider>
+    </LogInContextProvider>
   </React.StrictMode>
 )

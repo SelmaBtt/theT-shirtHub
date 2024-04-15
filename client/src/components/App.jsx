@@ -1,7 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import styles from '../stylesheets/App.module.css'
-import Navigation from "./routes/Navigation"
-import Switch from './routes/Switch'
+import Navigation from "./nav_components/Navigation"
+import Switch from './nav_components/Switch'
 
 
 function App() {

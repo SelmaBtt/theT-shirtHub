@@ -1,6 +1,6 @@
-import { ProductsContext } from '../../context/ProductContextProvider';
 import { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ProductsContext } from '../../context/ProductContextProvider';
 import styles from '../../stylesheets/Products.module.css'
 
 const Products = () => {

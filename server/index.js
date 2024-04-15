@@ -50,19 +50,27 @@ app.get('/products/:id', (req, res) => {
 
 // Handeling data from the users table ----------------------------------------
 
-// GET request
-app.get('/users', (req, res) => {
-    db.query("SELECT * FROM users;", (err, result) => {
+// POST request to log in
+app.post('/logIn', (req, res) => {
+    const { mail, password } = req.body;
+    db.query("SELECT * FROM users WHERE mail = ? AND password = ?;", 
+    [mail, password],
+    (err, result) => {
         if (err) {
             res.status(400).json(err);
             console.log(err)
-        } else{
+        } 
+
+        if (result.length > 0) {
             res.status(200).json(result);
+        } else {
+            res.send({ message: "Invalid email or/and password. Try again" })
         }
+        
     })
 })
 
-// POST request
+// POST request to create account
 app.post('/users', validation(userSchema), (req, res) => {
     const { fname, lname, mail, password } = req.body;
     db.query(
