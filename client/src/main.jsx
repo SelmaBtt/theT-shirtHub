@@ -5,14 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 import './stylesheets/root.css'
 import ProductContextProvider from './context/ProductContextProvider';
 import LogInContextProvider from './context/LogInContextProvider';
+import OrderContextProvider from './context/OrderContextProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LogInContextProvider>
       <ProductContextProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <OrderContextProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </OrderContextProvider>
       </ProductContextProvider>
     </LogInContextProvider>
   </React.StrictMode>

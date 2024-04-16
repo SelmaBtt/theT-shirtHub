@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { LogInContext } from '../../context/LogInContextProvider';
 import styles from '../../stylesheets/Navigation.module.css'
 import LogIn from './LogIn';
-import CartModal from './CartModal';
 import ShowLoggedIn from './ShowLoggedIn';
+import Search from './Search';
 
 const Navigation = () => {
 
@@ -24,16 +24,14 @@ const Navigation = () => {
             </ul>
 
             <div className={styles.searchWrapper}>
-                <input type="text" placeholder='Search...' /> {/* PLACEHOLDER */}
-                <button>🔍</button>
+                <Search />
                 {accDetails && accDetails.length > 0 ? (
                     <ShowLoggedIn />
                 ) : (
                     <LogIn />
                 )}
-                <CartModal />
+                <button><NavLink to='cart'>🛒</NavLink></button>
             </div>
-
         </>
     )
 }

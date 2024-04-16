@@ -48,6 +48,48 @@ app.get('/products/:id', (req, res) => {
 
 // ----------------------------------------------------------------------------
 
+// Handeling data from order table --------------------------------------------
+
+// POST request
+app.post('/orders', (req, res) => {
+    const { orderId, orderTitle, price} = req.body
+    db.query("INSERT INTO orders (orderId, orderTitle, price) VALUES (?, ?, ?) ",
+        [orderId, orderTitle, price],
+        (err, result) => {
+            if (err) {
+                res.status(400).json(err);
+            } else{
+                return res.status(200).json(result);
+            }
+        }
+    )
+})
+
+// GET request
+app.get('/orders', (req, res) => {
+    db.query("SELECT * FROM orders", (err, result) => {
+        if (err) {
+            res.status(400).json(err);
+        } else {
+            res.status(200).json(result);
+        }
+    })
+})
+
+// DELETE an order
+app.delete('/orders/:id', (req, res) => {
+    const id = req.params.id
+    db.query(`DELETE FROM orders WHERE orderId = ${id};`, (err, result) => {
+        if (err) {
+            res.status(400).json(err);
+        } else {
+            res.status(200).json(result);
+        }
+    })
+})
+
+// ----------------------------------------------------------------------------
+
 // Handeling data from the users table ----------------------------------------
 
 // POST request to log in

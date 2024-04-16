@@ -1,11 +1,13 @@
 import { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ProductsContext } from '../../context/ProductContextProvider';
+import { OrderContext } from '../../context/OrderContextProvider';
 import styles from '../../stylesheets/Products.module.css'
 
 const Products = () => {
 
     const {productsData, fetchProducts } = useContext(ProductsContext);
+    const { addOrder } = useContext(OrderContext);
 
     // Fetch all products on first render
     useEffect(() => {
@@ -19,15 +21,18 @@ const Products = () => {
             <div className={styles.productsWrapper}>
                 {/* Map through to display every product */}
                 {productsData && productsData.map((product, idx) => (
-                    <Link to={`/products/${product.productid}`}>
-                        <div className={styles.individualPrWrapper} key={product.idx}>
-                            <div className={styles.imgWrapper}>
-                                <img src="" alt="**Product image placeholder**" />
+                    <>
+                        <Link to={`/products/${product.productid}`}>
+                            <div className={styles.individualPrWrapper} key={product.idx}>
+                                <div className={styles.imgWrapper}>
+                                    <img src="" alt="**Product image placeholder**" />
+                                </div>
+                                <h2>{product.title}</h2>
+                                <h2>${product.cost}</h2>
                             </div>
-                            <h2>{product.title}</h2>
-                            <h2>${product.cost}</h2>
-                        </div>
-                    </Link>
+                        </Link>
+                        <button onClick={() => addOrder(product.productid, product.title, product.cost)}>Add to cart</button>
+                    </>
                 ))}
             </div>
         </>
