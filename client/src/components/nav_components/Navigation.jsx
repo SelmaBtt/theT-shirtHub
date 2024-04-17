@@ -30,7 +30,7 @@ const Navigation = () => {
                 ) : (
                     <LogIn />
                 )}
-                <button><NavLink to='cart'>🛒</NavLink></button>
+                <button><NavLink to='/cart'>🛒</NavLink></button>
             </div>
         </>
     )

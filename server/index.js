@@ -76,23 +76,24 @@ app.get('/orders', (req, res) => {
     })
 })
 
-// DELETE an order
-app.delete('/orders/:id', (req, res) => {
-    const id = req.params.id
-    db.query(`DELETE FROM orders WHERE orderId = ${id};`, (err, result) => {
-        if (err) {
-            res.status(400).json(err);
-        } else {
-            res.status(200).json(result);
-        }
-    })
-})
+// DELETE an order (not used any longer)
+// app.delete('/orders/:id', (req, res) => {
+//     const id = req.params.id
+//     db.query(`DELETE FROM orders WHERE orderId = ${id};`, (err, result) => {
+//         if (err) {
+//             res.status(400).json(err);
+//         } else {
+//             res.status(200).json(result);
+//         }
+//     })
+// })
 
-// ----------------------------------------------------------------------------
+// Handeling data from users/log in -------------------------------------------
 
 // Handeling data from the users table ----------------------------------------
 
 // POST request to log in
+
 app.post('/logIn', (req, res) => {
     const { mail, password } = req.body;
     db.query("SELECT * FROM users WHERE mail = ? AND password = ?;", 

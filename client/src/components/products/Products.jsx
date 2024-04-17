@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ProductsContext } from '../../context/ProductContextProvider';
 import { OrderContext } from '../../context/OrderContextProvider';
@@ -7,7 +7,7 @@ import styles from '../../stylesheets/Products.module.css'
 const Products = () => {
 
     const {productsData, fetchProducts } = useContext(ProductsContext);
-    const { addOrder } = useContext(OrderContext);
+    const { handleNewOrd } = useContext(OrderContext);
 
     // Fetch all products on first render
     useEffect(() => {
@@ -31,7 +31,7 @@ const Products = () => {
                                 <h2>${product.cost}</h2>
                             </div>
                         </Link>
-                        <button onClick={() => addOrder(product.productid, product.title, product.cost)}>Add to cart</button>
+                        <button onClick={() => handleNewOrd(product)}>Add to cart</button>
                     </>
                 ))}
             </div>

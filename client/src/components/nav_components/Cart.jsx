@@ -1,31 +1,48 @@
-// CartModal.jsx
-import { useContext, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { OrderContext } from '../../context/OrderContextProvider';
 import styles from '../../stylesheets/Cart.module.css'
 
 const Cart = () => {
-    const { orders, showOrders, deleteOrder } = useContext(OrderContext);
+    const { ordArr, addOrder } = useContext(OrderContext);
+    const [loading, setLoading] = useState(false);
+    const [complete, setComplete] = useState(false);
 
-    useEffect(() => {
-        showOrders();
-    }, []);
+    const loadingSimulation = () => {
+        setLoading(true);
+        setComplete(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+    }
 
     return (
         <>
-            {(orders && orders.length < 1) ? (
-                <h1>No orders in your cart yet</h1>
+            {loading ? (
+                <div>Loading...</div>
             ) : (
                 <>
-                    <h1>Cart</h1>
-                    <div>
-                        {orders.map((order, idx) => (
-                            <div key={idx}>
-                                <h2>{order.orderTitle}</h2>
-                                <h2>${order.price}</h2>
-                                <button onClick={() => { deleteOrder(order.orderId); }}>🗑️</button>
+                    {ordArr && ordArr.length < 1 ? (
+                        <>
+                            <h1>No orders in your cart yet</h1>
+                            {complete && 
+                                <h2>Order was successfully made!</h2>
+                            }
+                        </>
+                    ) : (
+                        <>
+                            <h1>Cart</h1>
+                            <div>
+                                {ordArr.map((order) => (
+                                    <div key={order.productid}>
+                                        <h2>{order.title}</h2>
+                                        <h2>${order.cost}</h2>
+                                        {/* <button onClick={() => { }}>🗑️</button> */}
+                                    </div>
+                                ))}
+                                <button onClick={() => { addOrder(); loadingSimulation() }}>Check out</button>
                             </div>
-                        ))}
-                    </div>
+                        </>
+                    )}
                 </>
             )}
         </>
