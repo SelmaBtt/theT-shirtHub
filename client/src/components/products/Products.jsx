@@ -6,7 +6,7 @@ import styles from '../../stylesheets/Products.module.css'
 
 const Products = () => {
 
-    const {productsData, fetchProducts } = useContext(ProductsContext);
+    const { productsData, fetchProducts } = useContext(ProductsContext);
     const { handleNewOrd } = useContext(OrderContext);
 
     // Fetch all products on first render

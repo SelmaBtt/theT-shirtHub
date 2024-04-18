@@ -6,6 +6,7 @@ const ProductContextProvider = (props) => {
 
     const [productsData, setProductsData] = useState([])
     const [oneProductData, setOneProductData] = useState([])
+    const [displayResult, setDisplayResult] = useState("")
     
     const fetchProducts = async () => {
         try {
@@ -34,7 +35,13 @@ const ProductContextProvider = (props) => {
     }
 
     return(
-        <ProductsContext.Provider value={{ productsData, fetchProducts, oneProductData, fetchOneProduct }}>
+        <ProductsContext.Provider value={{ 
+            productsData, 
+            fetchProducts, 
+            oneProductData, 
+            displayResult, setDisplayResult,
+            fetchOneProduct,
+        }}>
             {props.children}
         </ProductsContext.Provider>
     )

@@ -13,9 +13,6 @@ const db = mysql.createConnection({
     database: "thubdb",
     port: 3306,
 })
-// if (db.state!=='disconnected'){
-//     console.log("ok")
-// }
 
 app.use(express.json());
 app.use(cors());
@@ -23,7 +20,7 @@ app.use(cors());
 
 // Handeling data from the products table -------------------------------------
 
-// Get request ALL
+// GET request ALL
 app.get('/products', (req, res) => {
     db.query("SELECT * FROM products ORDER BY title", (err, result) => {
         if (err) {
@@ -34,7 +31,7 @@ app.get('/products', (req, res) => {
     })
 })
 
-// Get request SPECIFIC
+// GET request SPECIFIC
 app.get('/products/:id', (req, res) => {
     const productID = req.params.id;
     db.query(`SELECT * FROM products WHERE productid = ${productID}`, (err, result) => {
@@ -65,16 +62,16 @@ app.post('/orders', (req, res) => {
     )
 })
 
-// GET request
-app.get('/orders', (req, res) => {
-    db.query("SELECT * FROM orders", (err, result) => {
-        if (err) {
-            res.status(400).json(err);
-        } else {
-            res.status(200).json(result);
-        }
-    })
-})
+// GET request (not used any longer)
+// app.get('/orders', (req, res) => {
+//     db.query("SELECT * FROM orders", (err, result) => {
+//         if (err) {
+//             res.status(400).json(err);
+//         } else {
+//             res.status(200).json(result);
+//         }
+//     })
+// })
 
 // DELETE an order (not used any longer)
 // app.delete('/orders/:id', (req, res) => {

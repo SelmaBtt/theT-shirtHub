@@ -3,6 +3,7 @@ import CreateAccount from '../post users/CreateAccount';
 import Products from '../products/Products';
 import ProductDetail from '../products/ProductDetail';
 import Cart from './Cart';
+import DisplaySearchResult from '../search/DisplaySearchResult';
 
 const Switch = () => {
     return(
@@ -16,6 +17,7 @@ const Switch = () => {
 
             {/* Other routes */}
             <Route path='/products/:id' element={<ProductDetail />}></Route>
+            <Route path='/search' element={<DisplaySearchResult />}></Route>
         </Routes>
         
         </>

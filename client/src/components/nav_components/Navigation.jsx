@@ -4,7 +4,7 @@ import { LogInContext } from '../../context/LogInContextProvider';
 import styles from '../../stylesheets/Navigation.module.css'
 import LogIn from './LogIn';
 import ShowLoggedIn from './ShowLoggedIn';
-import Search from './Search';
+import Search from '../search/Search';
 
 const Navigation = () => {
 

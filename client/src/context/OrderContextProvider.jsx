@@ -40,9 +40,9 @@ const OrderContextProvider = (props) => {
     }
     
 
-    // Get orders (show cart orders)----------------------------------------------
+    // Get orders (show cart orders) (not used any longer --------------------------
 
-    const [orders, setOrders] = useState([])
+    // const [orders, setOrders] = useState([])
 
     // const showOrders = async() => {
     //     try {
@@ -82,7 +82,7 @@ const OrderContextProvider = (props) => {
             ordArr,
             handleNewOrd,
             addOrder,
-            orders, setOrders,
+            // orders, setOrders,
             // showOrders,
         }}>
             {props.children}
