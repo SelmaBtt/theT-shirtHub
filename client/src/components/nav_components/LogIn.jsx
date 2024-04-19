@@ -11,7 +11,7 @@ const LogIn = () => {
 
     return(
         <>
-            <button onClick={() => setLogIn(true)}>👤 Sign in</button>
+            <button className={styles.logInBtn} onClick={() => setLogIn(true)}>👤 Sign in</button>
             {logIn &&
                 <div className={styles.logInWrapper}>
                     <div className={styles.modalBtn}>

@@ -20,3 +20,8 @@
 .logInFields{
     margin-top: -30px;
 }
+
+/* So that button isnt wrapping */
+.logInBtn{
+    text-wrap: nowrap;
+}

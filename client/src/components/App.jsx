@@ -1,6 +1,7 @@
 import styles from '../stylesheets/App.module.css'
 import Navigation from "./nav_components/Navigation"
 import Switch from './nav_components/Switch'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

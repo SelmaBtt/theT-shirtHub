@@ -1,6 +1,7 @@
 import ShowResponseMsg from './ShowResponseMsg';
 import styles from '../../stylesheets/DisplayForm.module.css';
 
+
 const DisplayForm = ({ 
     fname, setFname, lname, setLname, mail, setMail, password, setPassword,
     emailInput, emailErrMsg, popupMessage, setPopupMessage, errorMessage, createAccBtn 
@@ -9,9 +10,10 @@ const DisplayForm = ({
         <>
             <h1 className={styles.title}>Create your t-shirt hub account</h1>
 
-            <form onSubmit={createAccBtn} className={styles.formWrapper}>
+            <form onSubmit={createAccBtn} className="mb-3">
                 <label>First name</label>
                 <input 
+                    className="form-control"
                     type="text"
                     value={fname}
                     onChange={(e) => setFname(e.target.value)}
@@ -19,6 +21,7 @@ const DisplayForm = ({
                 />
                 <label>Last name</label>
                 <input 
+                    className="form-control"
                     type="text"
                     value={lname}
                     onChange={(e) => setLname(e.target.value)}
@@ -26,7 +29,8 @@ const DisplayForm = ({
                 />
                 <label>Email address</label> 
                 <input 
-                    type="text"
+                    className="form-control"
+                    type="email"
                     value={mail}
                     ref={emailInput}
                     onChange={(e) => setMail(e.target.value)}
@@ -34,6 +38,7 @@ const DisplayForm = ({
                 />
                 <label>Create password</label> 
                 <input 
+                    className="form-control"
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

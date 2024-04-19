@@ -12,6 +12,7 @@ const Search = () => {
     return(
         <>  
             <input 
+                className="form-control"
                 type="text" 
                 placeholder='Search...' 
                 ref={searchVal}
