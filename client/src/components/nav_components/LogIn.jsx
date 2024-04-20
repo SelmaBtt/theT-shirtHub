@@ -21,14 +21,16 @@ const LogIn = () => {
                         <h1>Sign in:</h1>
                         <label htmlFor="emailField">Email:</label> <br />
                         <input 
+                            className="form-control"
                             id='emailField' 
                             type="text"
                             onChange={(e) => { setEmail(e.target.value) }} 
                         /> <br />
                         <label htmlFor="passwordField">Password:</label> <br />
                         <input 
+                            className="form-control"
                             id='passwordField' 
-                            type="text" 
+                            type="password" 
                             onChange={(e) => { setPassword(e.target.value) }}
                         /> <br />
                         {(errorMsg && errorMsg.length > 0) && 

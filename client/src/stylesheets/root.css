@@ -1,4 +1,26 @@
+:root{
+    --main-color: #aaddff;
+    --accent-color: #002255;
+}
+
 *{
     margin: 0;
     box-sizing: border-box;
+}
+
+/* Default all buttons */
+button{
+    background-color: var(--main-color);
+    padding: 5px;
+    border-radius: 7px;
+    border: none;
+    min-width: 38px;
+}
+button:hover{
+    transform: scale(1.1);
+    transition: 0.1s ease-in-out;
+}
+button:active{
+    transform: scale(1);
+    transition: 0.1s ease-in-out;
 }

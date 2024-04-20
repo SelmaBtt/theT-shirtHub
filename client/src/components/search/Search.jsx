@@ -11,15 +11,17 @@ const Search = () => {
 
     return(
         <>  
-            <input 
-                className="form-control"
-                type="text" 
-                placeholder='Search...' 
-                ref={searchVal}
-                value={displayVal}
-                onChange={(e) => setDisplayVal(e.target.value)}
-            /> 
-            <button onClick={() => setDisplayResult(searchVal.current.value)}><Link to={`/search`}>🔍</Link></button>
+            <div className={styles.searchWrapper}>
+                <input 
+                    className="form-control"
+                    type="text" 
+                    placeholder='Search...' 
+                    ref={searchVal}
+                    value={displayVal}
+                    onChange={(e) => setDisplayVal(e.target.value)}
+                /> 
+                <button onClick={() => setDisplayResult(searchVal.current.value)}><Link to={`/search`}>🔍</Link></button>
+            </div>
             {(displayVal && displayVal.length > 0) &&
                 <div className={styles.displayWrapper}>
                     <p>"{displayVal}"</p>
