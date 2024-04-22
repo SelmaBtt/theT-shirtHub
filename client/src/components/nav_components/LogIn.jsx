@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LogInContext } from '../../context/LogInContextProvider';
 import styles from '../../stylesheets/LogIn.module.css'
+import { PersonFill } from 'react-bootstrap-icons'
 
 const LogIn = () => {
 
@@ -11,7 +12,8 @@ const LogIn = () => {
 
     return(
         <>
-            <button className={styles.logInBtn} onClick={() => setLogIn(true)}>👤 Sign in</button>
+            <button className={styles.logInBtn} onClick={() => setLogIn(true)}>
+                <PersonFill size={24} /> Sign in</button>
             {logIn &&
                 <div className={styles.logInWrapper}>
                     <div className={styles.modalBtn}>

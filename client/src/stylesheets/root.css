@@ -1,6 +1,7 @@
 :root{
     --main-color: #aaddff;
     --accent-color: #002255;
+    --border-radius: 7px;
 }
 
 *{
@@ -10,17 +11,24 @@
 
 /* Default all buttons */
 button{
-    background-color: var(--main-color);
-    padding: 5px;
-    border-radius: 7px;
+    background-color: var(--accent-color);
+    padding: 5px 7px;
+    border-radius: var(--border-radius);
     border: none;
     min-width: 38px;
+    color: white;
 }
 button:hover{
-    transform: scale(1.1);
+    transform: scale(1.09);
     transition: 0.1s ease-in-out;
 }
 button:active{
     transform: scale(1);
     transition: 0.1s ease-in-out;
+}
+
+/* Default all links */
+a{
+    text-decoration: none;
+    color: black;
 }

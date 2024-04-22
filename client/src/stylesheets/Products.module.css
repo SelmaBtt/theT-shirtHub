@@ -1,14 +1,48 @@
+@import url(root.css);
+
 .pageTitle{
     text-align: center;
     margin: 50px;
 }
 
+.feedbackWrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: floralwhite;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    z-index: 1;
+}
+.feedbackWrapper p{
+    margin: 0;
+}
+
+/* Container for all the products */
 .productsWrapper{
     display: flex;
     flex-wrap: wrap;
     gap: 40px 20px;
     justify-content: center;
+    align-items: stretch;
     margin-bottom: 50px;
+}
+
+/* Container for every individual product */
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-between;
+}
+.container:hover{
+    transform: scale(1.03);
+    transition: 0.1s ease-in-out;
+}
+.container:active{
+    transform: scale(1);
+    transition: 0.1s ease-in-out;
 }
 
 .individualPrWrapper{

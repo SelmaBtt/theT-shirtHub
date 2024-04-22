@@ -1,9 +1,10 @@
 import { useRef, useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import { ProductsContext } from "../../context/ProductContextProvider";
-import styles from '../../stylesheets/Search.module.css';
+import styles from '../../stylesheets/SearchInput.module.css';
+import { Search } from 'react-bootstrap-icons'
 
-const Search = () => {
+const SearchInput = () => {
 
     const { setDisplayResult } = useContext(ProductsContext)
     const [displayVal, setDisplayVal] = useState("")
@@ -20,7 +21,9 @@ const Search = () => {
                     value={displayVal}
                     onChange={(e) => setDisplayVal(e.target.value)}
                 /> 
-                <button onClick={() => setDisplayResult(searchVal.current.value)}><Link to={`/search`}>🔍</Link></button>
+                <button onClick={() => setDisplayResult(searchVal.current.value)}>
+                    <Link to={`/search`}><Search color="white" size={24} /></Link>
+                </button>
             </div>
             {(displayVal && displayVal.length > 0) &&
                 <div className={styles.displayWrapper}>
@@ -32,4 +35,4 @@ const Search = () => {
     )
 }
 
-export default Search;
+export default SearchInput;
