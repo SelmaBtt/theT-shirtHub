@@ -3,13 +3,12 @@ import Navigation from "./nav_components/Navigation"
 import Switch from './nav_components/Switch'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
 
   return (
     <>
       <nav className={styles.navWrapper}>
-        <div className={styles.navContainer}>
+        <div className={styles.imgWrapper}>
           <img className={styles.image} src="/logo-512vh.png" alt="the T-shirt store Logo" />
         </div>
         <Navigation />

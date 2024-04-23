@@ -33,3 +33,8 @@
     display: flex;
     gap: 10px;
 }
+
+.cartAmount{
+    color: white;
+    font-size: 10px;
+}

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { LogInContext } from '../../context/LogInContextProvider';
+import { OrderContext } from '../../context/OrderContextProvider';
 import styles from '../../stylesheets/Navigation.module.css'
 import LogIn from './LogIn';
 import ShowLoggedIn from './ShowLoggedIn';
@@ -11,6 +12,7 @@ const Navigation = () => {
 
     // Account details if youre logged in
     const { accDetails } = useContext(LogInContext);
+    const { ordArr } = useContext(OrderContext);
 
     return(
         <>
@@ -31,8 +33,16 @@ const Navigation = () => {
                 ) : (
                     <LogIn />
                 )}
-                <button><NavLink to='/cart'><Cart color='white' size={24} /></NavLink></button>
+                <button className={styles.cartBtn}>
+                    <NavLink to='/cart'>
+                        <Cart color='white' size={24} />
+                        {ordArr.length > 1 &&
+                            <p className={styles.cartAmount}>{ordArr.length}</p>
+                        }
+                    </NavLink>
+                </button>
             </div>
+            
         </>
     )
 }

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LogInContext } from '../../context/LogInContextProvider';
 import styles from '../../stylesheets/LogIn.module.css'
@@ -20,7 +20,7 @@ const LogIn = () => {
                         <button onClick={() => setLogIn(false)}>❌</button>
                     </div>
                     <div className={styles.logInFields}>
-                        <h1>Sign in:</h1>
+                        <h2>Sign in:</h2>
                         <label htmlFor="emailField">Email:</label> <br />
                         <input 
                             className="form-control"

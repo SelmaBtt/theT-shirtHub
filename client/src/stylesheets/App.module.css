@@ -3,6 +3,11 @@
     padding: 15px 2%;
     justify-content: space-between;
     background-color: gainsboro;
+    height: 135px;
+}
+
+.imgWrapper{
+    align-self: center;
 }
 
 .image{

@@ -23,17 +23,26 @@
 .productsWrapper{
     display: flex;
     flex-wrap: wrap;
-    gap: 40px 20px;
+    gap: 50px 20px;
     justify-content: center;
     align-items: stretch;
     margin-bottom: 50px;
+}
+.productsWrapper h2{
+    font-size: 1.5em;
+    margin: 10px;
+}
+.productsWrapper h3{
+    font-size: 1.3em;
+    margin: 0 10px;
+    font-weight: normal;
 }
 
 /* Container for every individual product */
 .container{
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 560px;
     justify-content: space-between;
 }
 .container:hover{
