@@ -1,13 +1,26 @@
+@import url(root.css);
+
 .title{
     margin: 50px 0;
+    text-align: center;
+}
+
+.storeName{
+    font-family: var(--logo-font);
+    color: var(--accent-color);
 }
 
 .formWrapper{
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
-.formWrapper input, .formWrapper button{
-    width: 15%;
+.formWrapper input{
+    width: 30%;
     margin-bottom: 15px;
+}
+
+.formWrapper button{
+    margin-top: 20px;
 }

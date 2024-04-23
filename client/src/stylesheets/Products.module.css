@@ -28,6 +28,9 @@
     align-items: stretch;
     margin-bottom: 50px;
 }
+.productsWrapper a:hover{
+    text-decoration: none;
+}
 .productsWrapper h2{
     font-size: 1.5em;
     margin: 10px;

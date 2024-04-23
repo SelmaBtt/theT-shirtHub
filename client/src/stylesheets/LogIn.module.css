@@ -1,7 +1,29 @@
+@import url(root.css);
+
+/* So that button in the nav isnt wrapping */
+.logInBtn{
+    text-wrap: nowrap;
+}
+
+/* Background */
+.opacityDiv{
+    position: fixed;
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 55%;
+}
+
+
+/* Everything in the modal window */
 .logInWrapper{
     position: fixed;
     background-color: thistle;
     padding: 30px;
+    width: 390px;
+    border-radius: var(--border-radius);
     
     /* To center the log in modal window */
     top: 50%;
@@ -9,8 +31,9 @@
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-.logInWrapper * {
-    margin-bottom: 10px;
+
+.logInWrapper h2{
+    margin-bottom: 15px;
 }
 
 .modalBtn{
@@ -19,10 +42,14 @@
 }
 
 .logInFields{
-    margin-top: -30px;
+    margin-top: -20px;
 }
 
-/* So that button isnt wrapping */
-.logInBtn{
-    text-wrap: nowrap;
+.errMsg{
+    font-size: 13px;
+    color: darkred;
+}
+
+.signInBtn{
+    margin-bottom: 7px;
 }

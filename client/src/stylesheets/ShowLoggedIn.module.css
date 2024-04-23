@@ -1,3 +1,7 @@
+.displayNameBtn{
+    white-space: nowrap;
+}
+
 .popUpWindow{
     position: absolute;
     background-color: honeydew;

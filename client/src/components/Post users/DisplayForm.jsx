@@ -8,9 +8,9 @@ const DisplayForm = ({
 }) => {
     return(
         <>
-            <h1 className={styles.title}>Create your t-shirt hub account</h1>
+            <h1 className={styles.title}>Create your <span className={styles.storeName}>T-shirt hub</span> account now</h1>
 
-            <form onSubmit={createAccBtn} className="mb-3">
+            <form onSubmit={createAccBtn} className={styles.formWrapper}>
                 <label>First name</label>
                 <input 
                     className="form-control"
