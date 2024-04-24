@@ -40,7 +40,7 @@
     grid-area: aside;
     justify-self: end;
     overflow: hidden;
-    opacity: 50%;
+    opacity: 30%;
     z-index: -1;
 }
 
