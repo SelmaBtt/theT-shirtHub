@@ -1,0 +1,28 @@
+@import url(root.css);
+
+.title{
+    text-align: center;
+    margin: 50px;
+}
+
+.resultWrapper{
+    margin: 0 10%;
+}
+
+.productWrapper{
+    margin-bottom: 30px;
+    padding: 20px 2%;
+    border: 0.2px solid lightgray;
+    border-radius: var(--border-radius);
+}
+.productWrapper:hover{
+    transform: scale(1.09);
+    transition: 0.1s ease-in-out;
+}
+.productWrapper:active{
+    transform: scale(1);
+    transition: 0.1s ease-in-out;
+}
+.resultWrapper a:hover{
+    text-decoration: none;
+}

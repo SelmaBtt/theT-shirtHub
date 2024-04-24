@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { ProductsContext } from "../../context/ProductContextProvider"
+import styles from '../../stylesheets/DisplaySearchResult.module.css'
 
 const DisplaySearchResult = () => {
 
@@ -23,16 +24,18 @@ const DisplaySearchResult = () => {
 
     return(
         <>
-            <h1>Products: {displayResult}</h1>
+            <h1 className={styles.title}>Products: {displayResult}</h1>
 
-            <div>
+            <div className={styles.resultWrapper}>
                 {/* Map through to display every products*/}
                 {filteredProducts && filteredProducts.map((product, idx) => (
                     <>
-                        <div>
-                            <h2>{product.title}</h2>
-                            <h2>${product.cost}</h2>
-                        </div>
+                        <Link to={`/products/${product.productid}`}>
+                            <div className={styles.productWrapper}>
+                                <h3>{product.title}</h3>
+                                <h3>${product.cost}</h3>
+                            </div>
+                        </Link>
                     </>
                 ))}
             </div>
