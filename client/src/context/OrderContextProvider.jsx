@@ -6,6 +6,13 @@ const OrderContextProvider = (props) => {
 
     const [ordArr, setOrdArr] = useState([]);
 
+    const[totalSum, setTotalSum] = useState(null)
+
+    useEffect(() => {
+        const sum = ordArr.reduce((acc, item) => acc + item.cost, 0);
+        setTotalSum(sum);
+    }, [ordArr]); 
+
     const handleNewOrd = (order) => {
         setOrdArr(ordArr => [...ordArr, order]); 
     }
@@ -80,6 +87,7 @@ const OrderContextProvider = (props) => {
     return (
         <OrderContext.Provider value={{ 
             ordArr,
+            totalSum,
             handleNewOrd,
             addOrder,
             // orders, setOrders,

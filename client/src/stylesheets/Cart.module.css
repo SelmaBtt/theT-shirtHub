@@ -1,2 +1,22 @@
+@import url(root.css);
 
+.title{
+    text-align: center;
+    margin: 50px;
+}
 
+.allOrders{
+    margin: 0 10%;
+}
+
+.order{
+    margin-bottom: 20px;
+}
+.order h4{
+    margin-bottom: -3px;
+}
+
+.sum{
+    font-weight: normal;
+    margin: -5px 0 20px 0;
+}

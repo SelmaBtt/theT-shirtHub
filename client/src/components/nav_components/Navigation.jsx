@@ -33,11 +33,11 @@ const Navigation = () => {
                 ) : (
                     <LogIn />
                 )}
-                <button className={styles.cartBtn}>
+                <button>
                     <NavLink to='/cart'>
                         <Cart color='white' size={24} />
                         {ordArr.length > 1 &&
-                            <p className={styles.cartAmount}>{ordArr.length}</p>
+                            <span className={styles.cartAmount}>{ordArr.length}</span>
                         }
                     </NavLink>
                 </button>

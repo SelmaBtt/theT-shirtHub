@@ -24,7 +24,13 @@ const DisplaySearchResult = () => {
 
     return(
         <>
-            <h1 className={styles.title}>Products: {displayResult}</h1>
+            <h1 className={styles.title}>
+                {(filteredProducts && filteredProducts.length > 0) ? (
+                    <span>Products for "{displayResult}"</span>
+                ) : (
+                    <span>No result matched your search "{displayResult}"</span>
+                )}
+            </h1>
 
             <div className={styles.resultWrapper}>
                 {/* Map through to display every products*/}
