@@ -48,7 +48,9 @@ const DisplayForm = ({
             </form>
 
             {/* Success or error response creating account */}
-            {popupMessage && <ShowResponseMsg popupMessage={popupMessage} setPopupMessage={setPopupMessage} />}
+            {popupMessage && 
+                <ShowResponseMsg popupMessage={popupMessage} setPopupMessage={setPopupMessage} />
+            }
 
             {/* Email error */}
             {(errorMessage && emailErrMsg.length > 0) && 

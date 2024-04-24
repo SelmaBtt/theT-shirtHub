@@ -22,7 +22,11 @@ const SearchInput = () => {
                     onChange={(e) => setDisplayVal(e.target.value)}
                 /> 
                 <button onClick={() => setDisplayResult(searchVal.current.value)}>
-                    <Link to={`/search`}><Search color="white" size={24} /></Link>
+                    {(displayVal && displayVal.length > 0) ? (
+                        <Link to={`/search`}><Search color="white" size={24} /></Link>
+                    ) : (
+                        <Search color="white" size={24} />
+                    )}
                 </button>
             </div>
         </>

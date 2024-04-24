@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import styles from '../../stylesheets/DisplayForm.module.css'
 
 const ShowResponseMsg = ({ popupMessage, setPopupMessage }) => {
     useEffect(() => {
@@ -10,7 +11,11 @@ const ShowResponseMsg = ({ popupMessage, setPopupMessage }) => {
 
     return(
         <>
-            <p>Successfully created your account!</p>
+            <div className={styles.successWrapper}>
+                <div class="alert alert-success" role="alert">
+                    Successfully created your account
+                </div>
+            </div>
         </>
     )
 }

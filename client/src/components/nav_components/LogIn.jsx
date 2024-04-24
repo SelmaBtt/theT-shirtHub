@@ -42,7 +42,9 @@ const LogIn = () => {
                                 onChange={(e) => { setPassword(e.target.value) }}
                             /> <br />
                             {(errorMsg && errorMsg.length > 0) && 
-                                <p className={styles.errMsg}>{errorMsg}</p>
+                                <div class="alert alert-danger" role="alert">
+                                    {errorMsg}
+                                </div>
                             }
                             <button className={styles.signInBtn} onClick={logInHandler}>Sign in</button>
                             <p>

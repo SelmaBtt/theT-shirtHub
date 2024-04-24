@@ -24,3 +24,10 @@
 .formWrapper button{
     margin-top: 20px;
 }
+
+
+/* From ShowResponse message component */
+.successWrapper{
+    width: 30%;
+    margin: 25px auto;
+}
