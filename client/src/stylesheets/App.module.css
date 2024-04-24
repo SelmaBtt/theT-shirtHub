@@ -1,8 +1,10 @@
+@import url(root.css);
+
 .navWrapper{
     display: flex;
     padding: 15px 2%;
     justify-content: space-between;
-    background-color: gainsboro;
+    background-color: var(--bg-color);
     height: 135px;
 }
 

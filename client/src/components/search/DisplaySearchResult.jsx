@@ -1,4 +1,5 @@
 import { useEffect, useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { ProductsContext } from "../../context/ProductContextProvider"
 
 const DisplaySearchResult = () => {
@@ -29,9 +30,6 @@ const DisplaySearchResult = () => {
                 {filteredProducts && filteredProducts.map((product, idx) => (
                     <>
                         <div>
-                            <div>
-                                <img src="" alt="**Product image placeholder**" />
-                            </div>
                             <h2>{product.title}</h2>
                             <h2>${product.cost}</h2>
                         </div>

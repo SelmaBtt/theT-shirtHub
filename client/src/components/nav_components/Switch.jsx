@@ -4,6 +4,7 @@ import Products from '../products/Products';
 import ProductDetail from '../products/ProductDetail';
 import Cart from './Cart';
 import DisplaySearchResult from '../search/DisplaySearchResult';
+import Home from '../Home';
 
 const Switch = () => {
     return(
@@ -11,6 +12,7 @@ const Switch = () => {
         
         <Routes>
             {/* Nav routes */}
+            <Route path='/' exact element={<Home />}></Route>
             <Route path='/sign_up' element={<CreateAccount />}></Route>
             <Route path='/products' element={<Products />}></Route>
             <Route path='/cart' element={<Cart />}></Route>

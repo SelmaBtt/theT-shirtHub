@@ -1,0 +1,55 @@
+@import url(root.css);
+
+.welcomeWrapper{
+    padding: 50px 0 50px 10%;
+    display: grid;
+    margin: 0 auto;
+    grid-template-areas: 
+        "title aside"
+        "search aside";
+    grid-template-columns: auto 300px;
+    gap: 0 200px;
+}
+
+.title{
+    grid-area: title;
+    align-self: end;
+    margin-bottom: 30px;
+    font-size: 3em;
+}
+
+.searchContainer{
+    grid-area: search;
+}
+
+.welcomeWrapper input{
+    padding: 12px 24px;
+}
+.welcomeWrapper button{
+    padding: 12px 18px;
+}
+
+.mainFont{
+    font-family: var(--logo-font);
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.bgIcon{
+    width: 100%;
+    grid-area: aside;
+    justify-self: end;
+    overflow: hidden;
+    opacity: 50%;
+    z-index: -1;
+}
+
+.line{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.checkoutWrapper{
+    padding: 100px 10%;
+    text-align: center;
+}

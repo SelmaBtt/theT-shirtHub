@@ -20,7 +20,7 @@
 /* Everything in the modal window */
 .logInWrapper{
     position: fixed;
-    background-color: thistle;
+    background-color: var(--bg-color);
     padding: 30px;
     width: 390px;
     border-radius: var(--border-radius);

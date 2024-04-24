@@ -25,12 +25,6 @@ const SearchInput = () => {
                     <Link to={`/search`}><Search color="white" size={24} /></Link>
                 </button>
             </div>
-            {(displayVal && displayVal.length > 0) &&
-                <div className={styles.displayWrapper}>
-                    <p>"{displayVal}"</p>
-                    <Link to={`/search`}><p>Show result</p></Link>
-                </div>
-            }
         </>
     )
 }
