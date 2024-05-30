@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const app = express()
 const mysql = require('mysql')
@@ -7,12 +8,12 @@ const userSchema = require('./validations/userValidation')
 
 // Connecting to database 
 const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "1468Skxb",
-    database: "thubdb",
-    port: 3306,
-})
+    user: process.env.API_USER,
+    host: process.env.API_HOST,
+    password: process.env.API_PASS,
+    database: process.env.API_DB,
+    port: process.env.API_PORT
+});
 
 app.use(express.json());
 app.use(cors());
