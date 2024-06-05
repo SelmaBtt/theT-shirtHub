@@ -1,13 +1,13 @@
 require('dotenv').config();
 const express = require('express')
 const app = express()
-const mysql = require('mysql')
+const mysql = require('mysql2')
 const cors = require('cors')
 const validation = require('./Middlewares/validationMiddleware');
 const userSchema = require('./validations/userValidation')
 
 // Connecting to database 
-// const db = mysql.createConnection({
+// const db = mysql.createPool({
 //     user: 'root',
 //     host: 'localhost',
 //     password: '1468Skxb',
@@ -15,13 +15,22 @@ const userSchema = require('./validations/userValidation')
 //     port: 3306
 // });
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     user: process.env.API_USER,
     host: process.env.API_HOST,
     password: process.env.API_PASS,
     database: process.env.API_DB,
     port: process.env.API_PORT
 });
+
+db.getConnection((err, conn) => {
+    if (err) {
+        console.error('error db', err.code)
+    } else {
+        console.log('db conn successful')
+        conn.release();
+    }
+})
 
 app.use(express.json());
 app.use(cors());
