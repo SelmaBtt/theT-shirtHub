@@ -7,6 +7,14 @@ const validation = require('./Middlewares/validationMiddleware');
 const userSchema = require('./validations/userValidation')
 
 // Connecting to database 
+// const db = mysql.createConnection({
+//     user: 'root',
+//     host: 'localhost',
+//     password: '1468Skxb',
+//     database: 'thubdb',
+//     port: 3306
+// });
+
 const db = mysql.createConnection({
     user: process.env.API_USER,
     host: process.env.API_HOST,
