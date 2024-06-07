@@ -10,7 +10,7 @@ const ProductContextProvider = (props) => {
     
     const fetchProducts = async () => {
         try {
-            const response = await fetch('https://the-tshirt-hub.up.railway.app/products')
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/products`)
             if (!response.ok) {
                 throw Error('Error fetching products');
             }
@@ -23,7 +23,7 @@ const ProductContextProvider = (props) => {
 
     const fetchOneProduct = async (pID) => {
         try {
-            const response = await fetch(`https://the-tshirt-hub.up.railway.app/products/${pID}`)
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/products/${pID}`)
             if (!response.ok) {
                 throw Error('Error fetching products');
             }

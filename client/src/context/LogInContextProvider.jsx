@@ -19,7 +19,7 @@ const LogInContextProvider = (props) => {
 
     const logInHandler = async () => {
         try {
-            const response = await fetch('https://the-tshirt-hub.up.railway.app/logIn', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/logIn`, {
                 method: 'POST',
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({

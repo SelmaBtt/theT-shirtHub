@@ -22,7 +22,7 @@ const CreateAccount = () => {
         e.preventDefault();
         try {
             setErrorMessage(false)
-            const response = await fetch('https://the-tshirt-hub.up.railway.app/users', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
                 method: 'POST',
                 headers: {"Content-type": "application/json"},
                 body: JSON.stringify({
