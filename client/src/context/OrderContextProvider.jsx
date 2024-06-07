@@ -23,7 +23,7 @@ const OrderContextProvider = (props) => {
     const addOrder = async () => {
         try {
             for (const order of ordArr) {
-                const response = await fetch('http://localhost:3001/orders', {
+                const response = await fetch('https://the-tshirt-hub.up.railway.app/orders', {
                     method: 'POST',
                     headers: { "Content-type": "application/json" },
                     body: JSON.stringify({

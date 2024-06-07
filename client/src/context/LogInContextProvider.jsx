@@ -19,7 +19,7 @@ const LogInContextProvider = (props) => {
 
     const logInHandler = async () => {
         try {
-            const response = await fetch('http://localhost:3001/logIn', {
+            const response = await fetch('https://the-tshirt-hub.up.railway.app/logIn', {
                 method: 'POST',
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({
@@ -37,7 +37,6 @@ const LogInContextProvider = (props) => {
                 setLogIn(false)
                 setErrorMsg("")
                 setAccDetails(data)
-                
             }
         } catch (error) {
             console.log(error)

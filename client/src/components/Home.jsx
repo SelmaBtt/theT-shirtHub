@@ -31,7 +31,11 @@ const Home = () => {
             </div>
             <hr className={styles.line} />
             <div className={styles.checkoutWrapper}>
-                <h2><Link>Check out our products <ArrowRightShort /></Link></h2>
+                <h2>
+                    <Link to={`/products`}>
+                        Check out our products <ArrowRightShort />
+                    </Link>
+                </h2>
             </div>
         </>
     )
