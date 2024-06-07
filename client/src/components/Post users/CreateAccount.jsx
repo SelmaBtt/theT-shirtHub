@@ -22,7 +22,7 @@ const CreateAccount = () => {
         e.preventDefault();
         try {
             setErrorMessage(false)
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/users`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/users`, {
                 method: 'POST',
                 headers: {"Content-type": "application/json"},
                 body: JSON.stringify({

@@ -23,7 +23,7 @@ const OrderContextProvider = (props) => {
     const addOrder = async () => {
         try {
             for (const order of ordArr) {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/orders`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/orders`, {
                     method: 'POST',
                     headers: { "Content-type": "application/json" },
                     body: JSON.stringify({
