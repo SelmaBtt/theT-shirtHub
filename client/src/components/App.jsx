@@ -1,3 +1,4 @@
+import 'vite/modulepreload-polyfill'
 import { Link } from 'react-router-dom';
 import styles from '../stylesheets/App.module.css'
 import Navigation from "./nav_components/Navigation"
